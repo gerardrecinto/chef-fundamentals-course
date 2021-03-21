@@ -1,0 +1,313 @@
+    1  yum install chef-client
+    2  which chef
+    3  chef
+    4  exit
+    5  ll
+    6  cd /home/vagrant/
+    7  ll
+    8  rpm -ivh chefdk-0.11.2-1.el7.x86_64.rpm 
+    9  chef-client --local-mode hello.rb 
+   10  vi setup.rb
+   11  exit
+   12  ll
+   13  cd /home/
+   14  ll
+   15  cd vagrant/
+   16  ll
+   17  chef-client --local-mode setup.rb 
+   18  vi setup.rb 
+   19  exit
+   20  cd /home/vagrant/
+   21  vi /root/.chef/local-mode-cache/cache/chef-stacktrace.out 
+   22  vi setup.rb 
+   23  ll
+   24  vi setup.rb 
+   25  chef-client --local-mode setup.rb 
+   26  cd /home/vagrant/
+   27  ll
+   28  chef-client --local-mode setup.rb 
+   29  which tree
+   30  which ntp
+   31  exit
+   32  ll
+   33  cd /home/vagrant/
+   34  ll
+   35  exit
+   36  ll
+   37  cd /home/vagrant/
+   38  ll
+   39  mkdir cookbooks/workstation/recipes/
+   40  ll
+   41  pwd
+   42  mkdir cookbooks
+   43  cd cookbooks/
+   44  mkdir workstation
+   45  cd workstation/
+   46  mkdir recipes
+   47  cd recipes/
+   48  vi setup.rb
+   49  sudo chef-client -z cookbooks/workstation/
+   50  vi setup.rb 
+   51  sudo chef-client -z cookbooks/workstation/
+   52  ll
+   53  sudo chef-client -z
+   54  ll
+   55  sudo chef-client -z setup.rb 
+   56  exit
+   57  pwd
+   58  cd /home/vagrant/
+   59  ls
+   60  chef generate cookbook cookbooks/workstation/
+   61  tree
+   62  cat cookbooks/workstation/metadata.rb 
+   63  ll
+   64  mv setup.rb cookbooks/workstation/recipes/
+   65  ll
+   66  cat setup.rb 
+   67  ll cookbooks/workstation/recipes/
+   68  cat cookbooks/workstation/recipes/setup.rb 
+   69  chef generate
+   70  chef generate cookbook apache
+   71  tree
+   72  rm -r apache/
+   73  ll
+   74  chef generate cookbook cookbooks/apache
+   75  tree
+   76  chef generate --help
+   77  chef generate recipe cookbooks/apache/
+   78  chef generate recipe cookbooks/apache/ server
+   79  vi cookbooks/apache/recipes/server.rb 
+   80  chef exec ruby -c cookbooks/apache/recipes/server.rb 
+   81  sudo chef-client -z cookbooks/apache/recipes/server.rb 
+   82  sudo chef-client --help
+   83  chef
+   84  chef generate
+   85  ll
+   86  ll cookbooks/workstation/
+   87  ll cookbooks/workstation/recipes/
+   88  ll cookbooks/
+   89  tree
+   90  tree | grep metadata.rb
+   91  cat cookbooks/apache/metadata.rb 
+   92  ls cookbooks/
+   93  tree cookbooks/apache/
+   94  sudo chef-client -z --runlist "apache::server"
+   95  sudo chef-client -z --runlist "workstation::setup"
+   96  ls
+   97  sudo chef-client -z -r "recipe[apache::server]"
+   98  exit
+   99  ll
+  100  cd /home/vagrant/
+  101  ll
+  102  cat setup.rb 
+  103  chef --help
+  104  ll
+  105  pwd
+  106  ls -arilt
+  107  ls -aril
+  108  ls -arilt
+  109  chef generate cookbook --help
+  110  tree .
+  111  cat cookbooks/workstation/metadata.rb 
+  112  cat cookbooks/workstation/README.md 
+  113  cat cookbooks/workstation/recipes/default.rb 
+  114  cat cookbooks/workstation/test/integration/helpers/serverspec/spec_helper.rb 
+  115  ll
+  116  cat setup.rb 
+  117  ls -arilt cookbooks/workstation/recipes/
+  118  cat cookbooks/workstation/recipes/setup.rb 
+  119  chef-client -z cookbooks/workstation/recipes/setup.rb 
+  120  git
+  121  gvim
+  122  which git
+  123  cd cookbooks/workstation/
+  124  pwd
+  125  ll
+  126  ls -arilt
+  127  ls -arilt .git
+  128  git status
+  129  git remote
+  130  man git
+  131  git remote list origin
+  132  man git
+  133  git remote origin
+  134  git remote origin --help
+  135  git remote get-url origin
+  136  git remote origin
+  137  git remote --verbose
+  138  git status
+  139  cat .kitchen.yml 
+  140  git add .
+  141  ls -arilt
+  142  git status
+  143  git commit -m "initial commit"
+  144  git config --edit
+  145  ls -arilt /home/vagrant/chef-fundamentals-course/
+  146  ls -latr
+  147  ls -laitr
+  148  ls -arilt
+  149  history 
+  150  history | grep git
+  151  exit
+  152  cd -
+  153  cd /home/vagrant/cookbooks/workstation/
+  154  ls -arilt
+  155  pwd
+  156  tree .
+  157  cat recipes/setup.rb 
+  158  vi recipes/setup.rb 
+  159  git status
+  160  git add recipes/setup.rb 
+  161  git status
+  162  git commit -m "added emacs pkg to setup.rb"
+  163  git status
+  164  history | grep chef
+  165  tree .
+  166  sed -i -e 's/0.1.0/0.2.0/g' metadata.rb 
+  167  cat metadata.rb 
+  168  git add metadata.rb 
+  169  git commit "version 0.2.0"
+  170  git commit -m "version 0.2.0"
+  171  ll
+  172  ls -arilt
+  173  git remote add origin https://github.com/gerardrecinto/chef-fundamentals-course.git
+  174  git config --global user.name "Gerard Recinto"
+  175  git config --global user.email gerardrecinto@gmail.com
+  176  ls -arilt
+  177  git pull
+  178  git branch --set-upstream-to=origin/main
+  179  git pull
+  180  git diff --help
+  181  cat README.md 
+  182  vi README.md 
+  183  git add README.md 
+  184  git commit -m "git pull == fetch and merge"
+  185  git config --edit
+  186  git push
+  187  git push origin main
+  188  git config --global push.default simple
+  189  git push origin main
+  190  ll
+  191  ls -arilt
+  192  cd
+  193  ls -arilt
+  194  cd /home/vagrant/
+  195  ls -arilt
+  196  ls -arilt cookbooks/workstation/
+  197   man cp
+  198  cp --help
+  199  ls -arilt
+  200  cp -r cookbooks/workstation/* chef-fundamentals-course/
+  201  cd chef-fundamentals-course/
+  202  ls -arilt
+  203  git add .
+  204   git commit -m "chef generate cookbook"
+  205  ls -arilt
+  206  cd ..
+  207  ls -arilt
+  208  rm -r chef-fundamentals-course/
+  209  ls -arilt
+  210  cd chef-fundamentals-course/
+  211  ls -ariltr
+  212  cd ..
+  213  sudo rm -r chef-fundamentals-course/
+  214  ls -arilt
+  215  git clone https://github.com/gerardrecinto/chef-fundamentals-course
+  216  ls -arilt
+  217  cp -r cookbooks/workstation/recipes/ chef-fundamentals-course/
+  218  ls -arilt chef-fundamentals-course/
+  219  ls -arilt cookbooks/workstation/
+  220  ls -arilt chef-fundamentals-course/cookbooks/
+  221  ls -arilt chef-fundamentals-course/cookbooks/workstation/
+  222  ls -arilt chef-fundamentals-course/cookbooks/workstation/recipes/
+  223  ls -arilt chef-fundamentals-course/
+  224  cp cookbooks/workstation/Berksfile chef-fundamentals-course/
+  225  cd cookbooks/workstation/
+  226  ls -arilt
+  227  cp Berksfile /home/vagrant/chef-fundamentals-course/
+  228  ls -arilt ../../chef-fundamentals-course/
+  229  cp .kitchen.yml ../../chef-fundamentals-course/
+  230  cp README.md ../../chef-fundamentals-course/
+  231  ls -arilt
+  232  cp -r test ../../chef-fundamentals-course/
+  233  cp -r spec ../../chef-fundamentals-course/
+  234  ls -arilt
+  235  ls -arilt ../../chef-fundamentals-course/
+  236  cat .gitignore 
+  237  cp .gitignore ../../chef-fundamentals-course/
+  238  ls -arilt ../../chef-fundamentals-course/
+  239  tree . > dir
+  240  tree ../../chef-fundamentals-course/ > dir2
+  241  cat dir
+  242  cat dir2
+  243  diff dir dir2
+  244  ls -arilt ../../chef-fundamentals-course/
+  245  cp metadata.rb ../../chef-fundamentals-course/
+  246  ls -arilt
+  247  cd ../../chef-fundamentals-course/
+  248  ls -arilt
+  249  cat README.md 
+  250  git add .
+  251  git commit -m "chef generate"
+  252  git push
+  253  ls -arilt cookbooks/
+  254  ls -arilt cookbooks/workstation/
+  255  cd
+  256  cd /home/vagrant/cookbooks/workstation/
+  257  ls -arilt
+  258  rm dir
+  259  rm dir2
+  260  ls -arilt
+  261  tree .
+  262  cd ..
+  263  ls -arilt
+  264  ls -arilt cookbooks/
+  265  cd cookbooks/apache/
+  266  ls -arilt
+  267  chef generate --help
+  268  ls -arilt
+  269  pwd
+  270  /
+  271  \
+  272  cd
+  273  cd /home/vagrant/
+  274  ls -arilt
+  275  chef generate recipe cookbooks/apache/ server
+  276  ls -arilt
+  277  cd cookbooks/workstation/
+  278  ls -arilt
+  279  cd ..
+  280  ls -arilt
+  281  cd apache/
+  282  ls -arilt
+  283  cd test
+  284  ls -arilt
+  285  cd integration/
+  286  ls -arilt
+  287  cd default/
+  288  ls -arilt
+  289  cd ..
+  290  ls -arilt
+  291  cd ..
+  292  ls -arilt
+  293  cd ..
+  294  ls -arilt
+  295  tree .
+  296  cd recipes/
+  297  vi server.rb 
+  298  pwd
+  299  cd /home/vagrant/
+  300  ls -arilt
+  301  chef exec ruby -c cookbooks/apache/recipes/server.rb 
+  302  vi cookbooks/apache/recipes/server.rb 
+  303  chef exec ruby -c cookbooks/apache/recipes/server.rb 
+  304  \
+  305  chef-client -z cookbooks/apache/recipes/server.rb 
+  306  curl localhost
+  307  pwd
+  308  cd chef-fundamentals-course/
+  309  ls -arilt
+  310  vi output.txt
+  311  ls -arilt
+  312  history 
+  313  history > history.txt

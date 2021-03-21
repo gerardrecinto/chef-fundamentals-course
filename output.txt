@@ -1,0 +1,32 @@
+[root@localhost vagrant]# chef-client -z cookbooks/apache/recipes/server.rb
+[2021-03-21T23:21:31+00:00] WARN: No config file found or specified on command line, using command line options.
+Starting Chef Client, version 12.7.2
+resolving cookbooks for run list: ["apache::server"]
+Synchronizing Cookbooks:
+  - apache (0.1.0)
+Compiling Cookbooks...
+[2021-03-21T23:21:32+00:00] WARN: Cloning resource attributes for file[/var/www/html/index.html] from prior resource (CHEF-3694)
+[2021-03-21T23:21:32+00:00] WARN: Previous file[/var/www/html/index.html]: /root/.chef/local-mode-cache/cache/cookbooks/apache/recipes/server.rb:11:in `from_file'
+[2021-03-21T23:21:32+00:00] WARN: Current  file[/var/www/html/index.html]: /home/vagrant/cookbooks/apache/recipes/server.rb:11:in `from_file'
+Converging 6 resources
+Recipe: apache::server
+  * yum_package[httpd] action install (up to date)
+  * file[/var/www/html/index.html] action create
+    - update content in file /var/www/html/index.html from ceaf61 to e2c6c0
+    --- /var/www/html/index.html        2021-03-06 09:30:55.127228779 +0000
+    +++ /var/www/html/.index.html20210321-11282-6gy0jo  2021-03-21 23:21:33.197634185 +0000
+    @@ -1,2 +1,2 @@
+    -<h1>Hello world</h1>
+    +<h1>Hello</h1>
+    - restore selinux security context
+  * service[httpd] action enable (up to date)
+  * service[httpd] action start (up to date)
+Recipe: @recipe_files::/home/vagrant/cookbooks/apache/recipes/server.rb
+  * yum_package[httpd] action install (up to date)
+  * file[/var/www/html/index.html] action create (up to date)
+  * service[httpd] action enable (up to date)
+  * service[httpd] action start (up to date)
+
+Running handlers:
+Running handlers complete
+Chef Client finished, 1/8 resources updated in 02 seconds
