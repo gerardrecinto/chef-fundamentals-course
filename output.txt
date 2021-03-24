@@ -30,3 +30,21 @@ Recipe: @recipe_files::/home/vagrant/cookbooks/apache/recipes/server.rb
 Running handlers:
 Running handlers complete
 Chef Client finished, 1/8 resources updated in 02 seconds
+
+[root@localhost vagrant]# chef-client -z --runlist "apache::server"
+[2021-03-21T23:33:24+00:00] WARN: No config file found or specified on command line, using command line options.
+Starting Chef Client, version 12.7.2
+resolving cookbooks for run list: ["apache::server"]
+Synchronizing Cookbooks:
+  - apache (0.1.0)
+Compiling Cookbooks...
+Converging 3 resources
+Recipe: apache::server
+  * yum_package[httpd] action install (up to date)
+  * file[/var/www/html/index.html] action create (up to date)
+  * service[httpd] action enable (up to date)
+  * service[httpd] action start (up to date)
+
+Running handlers:
+Running handlers complete
+Chef Client finished, 0/4 resources updated in 02 seconds

@@ -311,3 +311,74 @@
   311  ls -arilt
   312  history 
   313  history > history.txt
+  314  vi history.txt 
+  315  ls -arilt
+  316  ls -arilt ~
+  317  cd ..
+  318  ls -arilt
+  319  cd chef-fundamentals-course/
+  320  cp -r ../cookbooks/apache/ .
+  321  ls -arilt
+  322  cd cookbooks/
+  323  ls -arilt
+  324  cd ..
+  325  mv apache/ cookbooks/
+  326  ls -arilt cookbooks/
+  327  ls -arilt
+  328  git add .
+  329  git commit -m "Apache cookbook, added output.txt and history.txt"
+  330  git push
+  331  cat output.txt 
+  332  \
+  333  cd
+  334  ls -arilt
+  335  sudo chef-client -z --runlist "apache::server"
+  336  pwd
+  337  cd /home/vagrant/
+  338  ls -arilt
+  339  tree cookbooks/
+  340  chef-client -z --runlist "apache::server"
+  341  curl localhost
+  342  cd /home/vagrant/chef-fundamentals-course/
+  343  ls -arilt
+  344  vi output.txt 
+  345  cd 
+  346  ls -arilt
+  347  cd /home/vagrant/
+  348  ls -arilt
+  349  cat hello.rb  | more
+  350  cat hello.rb  | less
+  351  exit
+  352  history 
+  353  cd /home/vagrant/
+  354  sudo chef-client -z "workstation::setup"
+  355  \
+  356  ls -aril
+  357  tree .
+  358  cd cookbooks/
+  359  ls
+  360  cd apache/
+  361  l
+  362  ll
+  363  cd ..
+  364  sudo chef-client -z --runlist "apache::server"
+  365  sudo chef-client -z --runlist "workstation::setup"
+  366  \
+  367  sudo chef-client -z -r "recipe[apache::server]"
+  368  sudo chef-client -z -r "recipe[apache::server], recipe[workstation::setup]"
+  369  sudo chef-client -z -r "recipe[apache::server],recipe[workstation::setup]"
+  370  cd 
+  371  ll
+  372  cd /home/vagrant/
+  373  ls -aril
+  374  cd cookbooks/
+  375  ls -aril
+  376  cd
+  377  cd /home/vagrant/chef-fundamentals-course/
+  378  ls -aril
+  379  ls
+  380  cd cookbooks/
+  381  ls
+  382  cd ..
+  383  ls
+  384  history > history.txt 
